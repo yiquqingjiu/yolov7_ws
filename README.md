@@ -43,10 +43,10 @@ src/
 
 ### 环境依赖
 
-- Ubuntu 20.04 + ROS Noetic（或兼容的 ROS 版本）
-- Python 3.8+
-- PyTorch、OpenCV、numpy
-- Basler Pylon SDK（使用 `pylon_camera` 时需要）
+Ubuntu 20.04 + ROS Noetic（或兼容的 ROS 版本）
+Python 3.8+
+PyTorch、OpenCV、numpy
+Basler Pylon SDK（使用 `pylon_camera` 时需要）
 
 # 启动 Pylon 相机
 roslaunch pylon_camera pylon_camera_node.launch
