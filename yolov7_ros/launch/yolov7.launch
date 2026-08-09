@@ -1,0 +1,42 @@
+<launch>
+    <node pkg="yolov7_ros" type="detect_ros.py" name="detect" output="screen"  ns="yolov7">
+        
+        <param name="weights_path" type="str" value="$(find yolov7_ros)/weights/best.pt"/>
+        <!-- 类别标签文件路径 -->
+        <param name="classes_path" type="str" value="$(find yolov7_ros)/class_labels/cone.txt" />
+        <!-- 订阅的 topic 名称 -->
+        <param name="img_topic" type="str" value="/pylon_camera_node/image_raw" />
+        <!-- 检测结果输出话题 -->
+        <param name="out_topic" type="str" value="yolov7" />
+        <!-- 置信度阈值 -->
+        <param name="conf_thresh" type="double" value="0.6" />
+        <!-- 交并比阈值 -->
+        <param name="iou_thresh" type="double" value="0.45" />
+        <!-- 消息队列大小 -->
+        <param name="queue_size" type="int" value="1" />
+        <!-- 图像大小，用于在输入到网络之前调整每个输入图像的大小 -->
+        <param name="img_size" type="int" value="320" />
+        <!-- 是否可视化检测结果 -->
+        <param name="visualize" type="bool" value="true" />
+        <!-- 设备类型 -->
+        <param name="device" type="str" value="cuda" />
+        <!-- 相机内参 -->
+        <param name="camera/fx" type="double" value="1378.97951"/>
+        <param name="camera/fy" type="double" value="1378.27001"/>
+        <param name="camera/cx" type="double" value="984.05127"/>
+        <param name="camera/cy" type="double" value="611.00651"/>
+        <!-- 畸变系数 -->
+        <param name="camera/distortion" type="str" value="[-0.097847, 0.228913, -0.000396, 0.001502, 0.0]"/>
+        <!-- 相机在车辆坐标系下的平移 -->
+        <param name="camera/translation" type="str" value="[0.3, 0.0, 0.5]"/>
+        <!-- 车辆→相机旋转矩阵 -->
+        <param name="camera/rotation" type="str" value="[[0, -1, 0], [0, 0, 1], [1, 0, 0]]"/>
+    </node>
+    <!-- 发布静态 TF -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_map_to_base"
+          args="0 0 0 0 0 0 map base_link"/>
+    <!--启动rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find yolov7_ros)/rviz/yolov7.rviz"/>
+</launch>    
+    
+ 

@@ -1,0 +1,2 @@
+# Large model weights via Git LFS
+yolov7_ros/weights/best.pt filter=lfs diff=lfs merge=lfs -text

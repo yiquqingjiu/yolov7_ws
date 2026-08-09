@@ -1,0 +1,3 @@
+red_cone
+blue_cone
+yellow_cone

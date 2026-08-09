@@ -1,0 +1,5 @@
+include:
+  - project: 'industrial-automation/drag-and-bot/devops/buildbot_docker'
+    file:
+      - 'ci-templates/default-single-ros-template.yml'
+      - 'ci-templates/check-buildbot-trigger-template.yml'

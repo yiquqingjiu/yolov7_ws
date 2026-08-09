@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+  yolov7_ros 包清单
+  功能：YOLOv7 锥桶检测节点，输出锥桶 ID、3D 位置、颜色与置信度
+-->
+<package format="2">
+  <name>yolov7_ros</name>
+  <version>0.0.0</version>
+  <description>YOLOv7 锥桶检测节点（含目标跟踪与单目 3D 定位）</description>
+
+  <!-- 维护者信息 -->
+  <maintainer email="ros@todo.todo">ros</maintainer>
+
+  <!-- 许可证 -->
+  <license>TODO</license>
+
+  <!-- 构建工具依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- 编译期依赖 -->
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>vision_msgs</build_depend>
+
+  <!-- 导出依赖（供依赖本包的其他包使用） -->
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>message_generation</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>vision_msgs</build_export_depend>
+
+  <!-- 运行期依赖 -->
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>vision_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+</package>
